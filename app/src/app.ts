@@ -16,3 +16,5 @@ class GoPhrazy {
     this.name = 'fam';
   }
 }
+
+bootstrap(GoPhrazy);
