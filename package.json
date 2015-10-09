@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/gophrazy"
+    "start": "node ./bin/gophrazy",
+    "tsd": "tsd",
+    "tsdInstall": "tsd install --save"
   },
   "devDependencies": {
     "babel": "^5.8.23",
@@ -35,6 +37,7 @@
     "morgan": "~1.6.1",
     "request": "^2.64.0",
     "serve-favicon": "~2.3.0",
+    "tsd": "^0.6.5",
     "vinyl-buffer": "^1.0.0",
     "vinyl-paths": "^2.0.0",
     "vinyl-source-stream": "^1.1.0"

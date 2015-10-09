@@ -6,13 +6,13 @@ import bunyan from 'bunyan';
 const client = mongodb.MongoClient;
 const log = bunyan.createLogger({name: "gophrazy"});
 
-const connection = 'mongodb://localhost:27017/gophrazy';
+const connection = 'mongodb://localhost:27017/webgames';
 const db = client.connect(connection, (err, db) {
   if (err !== null) {
     log.fatal("Failed to connect to database.");
   }
 });
-
+const collection = db.collection('phrases')
 // TODO: $('table:nth-of-type(4) > tbody > tr > td > font').text()
 
 const Scraper = {
@@ -28,6 +28,9 @@ const Scraper = {
           $(this).find('font').each(() => {
             phraseArray = $(this).text().split(' ');
             const phrases = phraseArray.filter(Scraper.isPhrase);
+            phrases.each(() => {
+              collection.insert($(this), 'sports');
+            })
           })
         });
       }
